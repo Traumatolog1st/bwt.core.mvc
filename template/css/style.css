@@ -1,0 +1,107 @@
+html, body {
+    width: auto;
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-image: url(../img/header_bg.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+header > .navbar {
+    border-radius: 0;
+    margin-bottom: 50px;
+    height: 70px;
+}
+
+header > .navbar a {
+    color: #fff;
+    font-weight: 600;
+}
+
+header > .navbar a:hover {
+    color: #fff;
+    background: none;
+}
+
+header > .navbar a:hover:after {
+    display: block;
+    content: "";
+    width: 100%;
+    border-bottom: 1px solid #fff;
+}
+
+header > .navbar a:active {
+    color: #fff;
+}
+
+header > .navbar a:focus {
+    background-color: inherit;
+    color: #fff;
+    outline: 0;
+}
+
+header > .navbar .navbar-brand:hover:after {
+    border-bottom: 0;
+}
+
+.forms #signupbox .sing_in_block {
+    position: relative;
+    top: -10px;
+    float: right;
+    font-size: 85%;
+}
+
+/*
+.forms #signupbox #signupform #signupalert {
+    display: none;
+}
+*/
+.no-padd {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.forms #loginbox .panel-body {
+    padding-top: 30px;
+}
+
+/*
+.forms #loginbox #login-alert {
+    display: none;
+}
+*/
+.forms #loginbox #loginform .input-group {
+    margin-bottom: 25px;
+}
+
+.forms #loginbox #loginform .form-group {
+    margin-top: 10px;
+}
+
+.forms #loginbox #loginform .form-group .control > div {
+    border-top: 1px solid #888;
+    padding-top: 15px;
+    font-size: 85%;
+}
+
+/*
+#feedback #feedbackbox #feedbackform #feedbackalert {
+    display: none;
+}
+*/
+
+#feedback #feedbackbox #feedbackform .form-group textarea {
+    resize: none;
+}
+
+#feedback #feedbackbox #feedbackform .recaptcha {
+    margin-top: 30px;
+}
+
+#feedbacklist .panel .list-group .feedback-block .entry-header .email {
+    text-align: right;
+}
