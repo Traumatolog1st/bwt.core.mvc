@@ -11,10 +11,9 @@ class WeatherController extends \components\Controller
     function actionIndex()
     {
         \models\User::checkLogged();
-
         $data = $this->model->getData();
-
         $this->view->generate('Weather.php', $data);
+
         return true;
     }
 }

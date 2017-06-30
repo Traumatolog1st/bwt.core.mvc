@@ -13,12 +13,6 @@ class Controller
         $this->view = new View();
     }
 
-    function __autoload($className)
-    {
-        $fileName = ROOT . '/models/' . $className . '.php';
-        echo $fileName;
-    }
-
     function actionIndex()
     {
 

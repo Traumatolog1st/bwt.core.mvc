@@ -11,10 +11,9 @@ class FeedbackController extends \components\Controller
     function actionIndex()
     {
         \models\User::checkLogged();
-
         $data = $this->model->getData();
-
         $this->view->generate('FeedbackList.php', $data);
+
         return true;
     }
 
@@ -33,22 +32,16 @@ class FeedbackController extends \components\Controller
             $secret = '6Le6_CUUAAAAAMWsmYpfYC16XwgTbQHp-gjc2_zG';
             $response = $_POST['g-recaptcha-response'];
             $remoteip = $_SERVER['REMOTE_ADDR'];
-
             $url = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$response&remoteip=$remoteip");
             $result = json_decode($url, true);
-
-            $data['email'] = $this->model::test_input($_POST["email"]);
-            $data['name'] = $this->model::test_input($_POST["name"]);
-            $data['message'] = $this->model::test_input($_POST["message"]);
+            $data['email'] = $this->model->test_input($_POST["email"]);
+            $data['name'] = $this->model->test_input($_POST["name"]);
+            $data['message'] = $this->model->test_input($_POST["message"]);
             $data['errors'] = '';
-
             if ($result['success'] == 1) {
-
-
-                $resultValidate = $this->model::validateFeedback($data);
-
+                $resultValidate = $this->model->validateFeedback($data);
                 if (is_bool($resultValidate) && $resultValidate) {
-                    $data['result'] = $this->model::setFeedback($data['name'], $data['email'], $data['message']);
+                    $data['result'] = $this->model->setFeedback($data['name'], $data['email'], $data['message']);
                 } else {
                     $data['errors'] = $resultValidate;
                 }
@@ -70,8 +63,8 @@ class FeedbackController extends \components\Controller
                 $data['errors'] = 'You have not passed the test "I\'m not a robot". Try again.';
             }
         }
-
         $this->view->generate('Feedback.php', $data);
+
         return true;
     }
 

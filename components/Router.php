@@ -44,7 +44,6 @@ class Router
                     include_once($controllerFile);
                 }
 
-
                 //подключим модель
                 $modelFile = ROOT . '/models/' . $modelName . '.php';
                 if (file_exists($modelFile)) {
